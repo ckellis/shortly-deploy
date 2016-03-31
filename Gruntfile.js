@@ -58,6 +58,7 @@ module.exports = function(grunt) {
         files: {
           'public/dist/style.min.css': 'public/style.css'
         }
+      }
     },
 
     watch: {
@@ -86,7 +87,7 @@ module.exports = function(grunt) {
           failOnError: true
         }
       }
-    },
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -130,7 +131,7 @@ module.exports = function(grunt) {
   grunt.registerTask('upload', function(n) {
     if (grunt.option('prod')) {
       // add your production server task here
-      grunt.task.run([ 'shell:prodServer' ])
+      grunt.task.run([ 'shell:prodServer' ]);
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
